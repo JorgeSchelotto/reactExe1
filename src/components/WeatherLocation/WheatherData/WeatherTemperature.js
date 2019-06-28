@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 import WeatherIcons from 'react-weathericons';
+import {
+    CLOUD, 
+    CLOUDY,
+    SUN,
+    RAIN, 
+    SNOW, 
+    WINDY, 
+} from '../../../constants/wheathers';
+import PropTypes from "prop-types";
+import "./styles.css";
 
 
 
 const icons = {
-    sunny: "day-sunny",
-    fog:"day-fog",
+    [CLOUD]:"cloud",
+    [CLOUDY]:"cloudy",
+    [SUN]: "day-sunny",
+    [RAIN]:"rain",
+    [SNOW]:"snow",
+    [WINDY]:"windy",
+
+
 }
 
 const getWheatherIcon= weatherState  => {
@@ -19,7 +35,7 @@ const getWheatherIcon= weatherState  => {
 
 const WheatherTemperature = ({temperature, weatherState}) => {
     return(
-    <div>
+    <div className="wheatherTemperatureCont">
          {
              getWheatherIcon(weatherState)
          }
@@ -27,6 +43,11 @@ const WheatherTemperature = ({temperature, weatherState}) => {
        
     </div>
     );
+
     };
+     WheatherTemperature.propTypes = {
+        temperature: PropTypes.number.isRequired,
+        weatherState: PropTypes.string.isRequired,
+     }
 
 export default WheatherTemperature;

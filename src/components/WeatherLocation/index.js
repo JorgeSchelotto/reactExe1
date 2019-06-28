@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Location from './Location';
 import WheatherData from './WheatherData';
+import PropTypes from "prop-types";
 
 
 
