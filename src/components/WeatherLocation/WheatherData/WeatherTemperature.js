@@ -23,14 +23,14 @@ const icons = {
 
 
 }
-
+const sizeIcon = '4px';
 const getWheatherIcon= weatherState  => {
     const icon=icons[weatherState];
     if(icon)
     return(
-        <WeatherIcons name={icon} size='2x'/>)
+        <WeatherIcons className="wicon" name={icon} size={sizeIcon}/>)
     else
-    return(<WeatherIcons name="day-haze" size='2x'/>)
+    return(<WeatherIcons className="wicon" name="day-haze" size={sizeIcon}/>)
 }
 
 const WheatherTemperature = ({temperature, weatherState}) => {
@@ -39,7 +39,8 @@ const WheatherTemperature = ({temperature, weatherState}) => {
          {
              getWheatherIcon(weatherState)
          }
-        <span>{`${temperature} ºc`}</span>
+        <span className="tempeture">{`${temperature}`}</span>
+        <span className="tempetureType">{`ºc`}</span>
        
     </div>
     );

@@ -4,8 +4,8 @@ import "./styles.css";
 
 const WheatherExtraInfo = ({humidity, wind}) => (
     <div className="wheatherExtraInfoCont">
-        <span>{`${humidity} % - ` }</span>
-        <span> {`${wind} wind`}</span>
+        <span className="extraInfoText" >{`Humedad: ${humidity} % - ` }</span>
+        <span className="extraInfoText"> {`Vientos: ${wind}`}</span>
     </div>
 );
 
